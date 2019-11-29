@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<environments default="mydb">
+		<environment id="mydb">
+			<!--指定事务管理的类型，这里简单使用Java的JDBC的提交和回滚设置 -->
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver"
+					value="net.sourceforge.jtds.jdbc.Driver" />
+				<property name="url"
+					value="jdbc:jtds:sqlserver://localhost:1433/homework01" />
+				<property name="username" value="yta" />
+				<property name="password" value="123456" />
+			</dataSource>
+
+		</environment>
+	</environments>
+
+	<mappers>
+	<mapper resource="homework2/ClassMapper.xml" />
+	<mapper resource="homework2/MethodMapper.xml" />
+	<mapper resource="homework2/ParamMapper.xml" />
+	<mapper resource="homework3/MyClassMapper.xml" />
+	<!--  <mapper resource="test/XSGLMapper.xml" />  -->	
+		
+	</mappers>
+</configuration>

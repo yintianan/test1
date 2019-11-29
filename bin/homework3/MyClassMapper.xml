@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="homework3.MyClassMapper">
+
+	<select id="findClass" parameterType="java.lang.String"
+		resultType="homework2.ClassInfo">
+		select classid,classname from classInfo where
+		className=(#{classname})
+	</select>
+
+	<select id="findMethod" parameterType="java.lang.Long"
+		resultType="homework2.MethodInfo">
+		select classid,methodid,methodname,returntype from methodInfo where
+		classid=(#{classid})
+	</select>
+
+	<select id="findParam" parameterType="java.lang.Long"
+		resultType="homework2.ParamInfo">
+		select * from paramInfo where
+		methodid=(#{methodid})
+	</select>
+
+
+</mapper>
